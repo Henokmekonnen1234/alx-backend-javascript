@@ -1,4 +1,4 @@
-import getSanFranciscoDescription from './6-string-interpolation.js';
+import getBudgetObject from './7-getBudgetObject.js';
 
-console.log(getSanFranciscoDescription());
+console.log(getBudgetObject(400, 700, 900));
 
