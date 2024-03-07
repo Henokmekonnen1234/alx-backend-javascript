@@ -23,7 +23,7 @@ export default class HolbertonCourse {
   constructor(name, length, students) {
     this._name = _validateName(name);
     this._length = _validateLength(length);
-    this._students = students;
+    this._students = _validateStudents(students);
   }
 
   get name() {
@@ -47,6 +47,6 @@ export default class HolbertonCourse {
   }
 
   set students(student) {
-    this._students = student;
+    this._students = _validateStudents(student);
   }
 }
