@@ -12,11 +12,17 @@ function _validateLength(value) {
   return value;
 }
 
+function _validateStudents(value) {
+  if (!Array.isArray(value) || !value.every((item) => typeof item !== 'string')) {
+    throw new TypeError('Student must be a Array of Strings');
+  }
+  return value;
+}
 export default class HolbertonCourse {
   constructor(name, length, students) {
     this._name = _validateName(name);
     this._length = _validateLength(length);
-    this._students = students;
+    this._students = _validateStudents(students);
   }
 
   get name() {
@@ -40,6 +46,6 @@ export default class HolbertonCourse {
   }
 
   set students(student) {
-    this._students = student;
+    this._students = _validateStudents(student);
   }
 }
